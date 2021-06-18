@@ -14,6 +14,7 @@ import AddTwoNumbers from "./components/add-two-numbers";
 import FibonacciSeries from "./components/fibonacci-series";
 import AddList from "./components/list-add";
 import SearchAString from "./components/SearchAString/SearchAString"
+import Calculator from "./components/Calculator"
 
 const RoutesView = () => (
   <ul>
@@ -43,6 +44,9 @@ const RoutesView = () => (
     </li>
     <li>
       <Link to="SearchAString">Searching of A string</Link>
+    </li>
+    <li>
+      <Link to="Calculator">Calculator</Link>
     </li>
   </ul>
 );
@@ -77,6 +81,9 @@ function App() {
           </Route>
           <Route path="/SearchAString">
             <SearchAString/>
+          </Route>
+          <Route path="/Calculator">
+            <Calculator/>
           </Route>
         </Switch>
     </Router>

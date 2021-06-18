@@ -4,7 +4,6 @@ import "./SearchAString.css"
 const SearchAString = () => {
     const [inputString, setInputString] = useState("");
     const [find, setFind] = useState("");
-    const [list, setList] = useState([]);
 
     const onInputString = (e) => setInputString(e.target.value);
     const onSearchString =(e) => setFind(e.target.value);
@@ -16,7 +15,6 @@ const SearchAString = () => {
             } else {
                 alert("STRING DOES NOT EXSISTS");
             }
-
     }
 
     return (
@@ -25,15 +23,7 @@ const SearchAString = () => {
             <div className ="Input-box">
                 <input value={inputString} placeholder="Enter the String" onChange={onInputString}/>
                 <input value={find} placeholder="Search for String" onChange={onSearchString}/>
-                <button onClick={onBtnClick} > Search</button> 
-            </div>
-                
-            <div>
-                <ul>
-                    {
-                        list.map((item, index) => <li key={index}>{item.inputString}, {item.searchString}</li>)
-                    }
-                </ul>
+                <button onClick={onBtnClick}> Search</button> 
             </div>
         </div>
     );
