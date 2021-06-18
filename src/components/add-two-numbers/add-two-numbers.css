@@ -1,0 +1,29 @@
+.input-field{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+.input-color{
+    background-color: darkgray;
+    color: black;
+    border-radius: 3px;
+    margin-right: 20px;
+    margin-left: 10px;
+}
+.submit-button{
+    border-radius: 3px;
+    font-family: 'Times New Roman', Times, serif;
+    background-color: black;
+    color: white;
+    margin-top: 20px;
+}
+.output-box{
+ border: 2px solid lightblue;
+}
+
+.h2 {
+    justify-content: center;
+    align-items: center;
+}
