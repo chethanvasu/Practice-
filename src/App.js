@@ -55,7 +55,7 @@ const RoutesView = () => (
       <Link to="/SearchAString">Searching of A string</Link>
     </li>
     <li>
-      <Link to="/add-del-elements">Adding of Elements</Link>
+      <Link to="/add-del-elements">Adding of Elements using RadioButton</Link>
     </li>
     <li>
       <Link to="/SearchingString">Searching String </Link>

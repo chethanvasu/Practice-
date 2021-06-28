@@ -46,23 +46,30 @@ const AddingElements = () => {
         setFlag(false);
     };
 
-    const onBtnCancel = (e) => setFlag(false);
+    const onBtnCancel = (e) => {
+        setFlag(false);
+        setName("");
+    }
 
     return (
         <div>
             <h2>List Add</h2>
                 <div className="input-box-elements">
                     <input value={name} onChange={onNameChange}/>
-                    <input type="submit"  value ="Add" onClick={onBtnAdd}/>
-                    <input type="submit" value ="Delete" onClick={onBtnDelete}/>
-
+                    
                     {
                         flag ? (
                             <React.Fragment>
                                 <input type="submit" value ="Update" onClick={onBtnUpdate}/>
                                 <input type="button" value ="cancel" onClick={onBtnCancel}/>
                             </React.Fragment>
-                        ) : <input type="submit" value ="Edit" onClick={onBtnEdit}/>
+                        ) : (
+                            <React.Fragment>
+                                <input type="submit"  value ="Add" onClick={onBtnAdd}/>
+                                <input type="submit" value ="Delete" onClick={onBtnDelete}/>
+                                <input type="submit" value ="Edit" onClick={onBtnEdit}/>
+                            </React.Fragment>
+                        )
                     }
 
                     <div className="output-box-elements">
