@@ -7,6 +7,7 @@ const NumberSetTimeOut = () => {
         const interval = setInterval(() => {
           setCount(numbercount => numbercount + 1);
         }, 1000);
+        
         return () => clearInterval(interval);
       }, []);
     

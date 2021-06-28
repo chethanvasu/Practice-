@@ -5,12 +5,13 @@ const DateTime = () => {
    
     useEffect(() => {
      const interval = setInterval(() => setDate(new Date()),1000);
+     
      return () => clearInterval(interval);
     }, []);
    
     return(
     <div className="box-element">
-        {[...Array(1).keys()].map(i => (<div key={i}> {date.toString()} </div>))}
+        {date.toString()}
     </div>);
    }
 
