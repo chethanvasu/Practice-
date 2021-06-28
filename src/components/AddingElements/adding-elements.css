@@ -1,0 +1,15 @@
+.input-box-elements {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+ }
+
+.output-box-elements {
+    display:flex;
+    flex-direction: column;
+    width: 0 auto;
+    margin-top: 20px;
+    margin-left: 150px;
+    margin-right: 150px;
+}
