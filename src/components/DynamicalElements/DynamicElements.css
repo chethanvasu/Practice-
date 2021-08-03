@@ -1,0 +1,19 @@
+.output-box-elements-result{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.output-box-elements1{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    margin-top: 20px;
+}
+.result{
+    display: grid;
+    grid-template-columns: 6fr 2fr 2fr;
+    column-gap: 5px;
+}

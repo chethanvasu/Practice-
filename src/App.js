@@ -24,6 +24,23 @@ import NumberSetTimeOut from "./components/SetTimeOut/index"
 import Timer from './components/Timer';
 import CounterJump from './components/CounterJump';
 import DateTime from './components/Date&Time';
+import AddingCheckboxElements from './components/AddingCheckboxElements';
+import DynamicalAddingElements from './components/DynamicalElements';
+import DynamicalDeletingELements from './components/DynamicDeleteElements';
+import Toggle from './components/Toggle';
+import SampleApi from "./components/sample-api";
+import Api from './components/Api Calls';
+import ApiNH from './components/Api-NH';
+import ApiQuint from './components/Api-Quint';
+import GhoAPi from './components/gho-api';
+import GhoAPiDimension from './components/Gho-APi-Dimension';
+import Calculator from './components/Calculator';
+import SimpleCalculator from './components/SimpleCalculator';
+import ToDoList from './components/ToDoList';
+import ToDoForm from './components/ToDoList/ToDoForm';
+import ToDoListAdd from './components/ToDoList';
+import ApiQuintStories from './components/Api-quint-times';
+import Pagination from './components/Pagination';
 
 const RoutesView = () => (
   <ul>
@@ -44,7 +61,7 @@ const RoutesView = () => (
     </li>
     <li>
       <Link to="/add-two-numbers">Addition of 2 Numbers</Link>
-    </li>
+    </li>SimpleCalculator
     <li>
       <Link to="/fibonacci-series">Fibonacci Series</Link>
     </li>
@@ -83,6 +100,51 @@ const RoutesView = () => (
     </li>
     <li>
       <Link to="/date-time"> Date and Time counter </Link>
+    </li>
+    <li>
+      <Link to="/checkbox-elements"> Adding of Elements using Checkbox </Link>
+    </li>
+    <li>
+      <Link to="/dynamical-adding-elements"> Dynamically Adding of Elements</Link>
+    </li>
+    <li>
+      <Link to="/dynamical-deleting-elements"> Dynamically Deleteing of Elements with Index</Link>
+    </li>
+    <li>
+      <Link to="/toggle-elements"> Hide and show </Link>
+    </li>
+    <li>
+      <Link to="/sample-api">Sample API</Link>
+    </li>
+    <li>
+      <Link to="/api"> API's</Link>
+    </li>
+    <li>
+      <Link to="/api-nh"> API-National Herald</Link>
+    </li>
+    <li>
+      <Link to="/api-quint"> API-Quint</Link>
+    </li>
+    <li>
+      <Link to="/gho-api"> GHO</Link>
+    </li>
+    <li>
+      <Link to="/gho-api-dimension"> GHO-Dimension</Link>
+    </li>
+    <li>
+      <Link to="/calculator"> Calculator</Link>
+    </li>
+    <li>
+      <Link to="/simple-calculator"> Simple Calculator</Link>
+    </li>
+    <li>
+      <Link to="/to-do-list"> To-Do-list</Link>
+    </li>
+    <li>
+      <Link to="/api-quint-stories"> Api-Quint-loadmore</Link>
+    </li>
+    <li>
+      <Link to="/pagination"> Pagination</Link>
     </li>
   </ul>
 );
@@ -125,7 +187,7 @@ function App() {
             <SearchingString/>
           </Route>
           <Route path="/search-filter">
-            <SearchFilter/>
+            <SearchFilter/>SampleApi
           </Route>
           <Route path="/Counter">
             <Counter/>
@@ -147,6 +209,55 @@ function App() {
           </Route>
           <Route path="/date-time">
             <DateTime/>
+          </Route>
+          <Route path = "/checkbox-elements"> 
+            <AddingCheckboxElements/>
+          </Route>
+          <Route path = "/dynamical-adding-elements"> 
+            <DynamicalAddingElements/>
+          </Route>
+          <Route path = "/dynamical-deleting-elements"> 
+            <DynamicalDeletingELements/>
+          </Route>
+          <Route path = "/toggle-elements"> 
+            <Toggle/>
+          </Route>
+          <Route path = "/sample-api"> 
+            <SampleApi/>  <Route path = "/simple-calculator"> 
+            <SimpleCalculator/>
+          </Route>
+          </Route>
+          <Route path = "/api"> 
+            <Api/>
+          </Route>
+          <Route path = "/api-nh"> 
+            <ApiNH/>
+          </Route>api-quint-stories
+          <Route path = "/api-quint"> 
+            <ApiQuint/>
+          </Route>
+          <Route path = "/gho-api"> 
+            <GhoAPi/>
+          </Route>
+          <Route path = "/gho-api-dimension"> 
+            <GhoAPiDimension/>
+          </Route>
+          <Route path = "/calculator"> 
+            <Calculator/>
+          </Route>
+          <Route path = "/simple-calculator"> 
+            <SimpleCalculator/>
+          </Route>
+          <Route path = "/to-do-list"> 
+            <ToDoList/>
+            <ToDoForm/>  
+            <ToDoListAdd/>
+          </Route>
+          <Route path = "/api-quint-stories"> 
+            <ApiQuintStories/>
+          </Route>
+          <Route path = "/pagination"> 
+            <Pagination/>
           </Route>
         </Switch>
     </Router>

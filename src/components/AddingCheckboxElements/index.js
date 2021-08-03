@@ -1,21 +1,23 @@
 import React, { useState } from 'react';
 
-import "./adding-elements.css"
-
-const AddingElements = () => {
+const AddingCheckboxElements = () => {
     const [name, setName] = useState("");
-    const [list, setList] = useState(["india", "usa", "uae", "south africa", "america", "north africa"]);
-    const [position, setPosition] = useState(0);
+    const [list, setList] = useState([
+        {name: "india", isChecked: false},
+        {name: "usa", isChecked: false},
+        {name: "uae", isChecked: true},
+        {name: "south africa", isChecked: false},
+        {name: "america", isChecked: false},
+        {name: "north africa", isChecked: false}
+    ]);
     const [flag, setFlag] = useState(false);
 
     const onNameChange = (e) => setName(e.target.value);
 
-    const onRadioChange = (e) => {
-        // if (!flag) {
-        //     setPosition(parseInt(e.target.value));
-        // }
-
-        setPosition(parseInt(e.target.value));
+    const onCheckboxChange = (index) => (e) => {
+        const temp = [...list];
+        temp[index].isChecked = e.target.checked;
+        setList(temp);
     };
 
     const onBtnAdd = (e) => {
@@ -24,24 +26,40 @@ const AddingElements = () => {
             return;
         }
 
+        if (list.find(c => c.name.toLowerCase() == name.toLowerCase())) {
+            alert("Item already exists");
+            return;
+        }
+
         const newList = [...list];
-        newList.push(name);
-       
+        newList.push({
+            name: name,
+            isChecked: false
+        });
+
         setList(newList);
         setName("");
     };
 
-    const onBtnDelete = (e) => {
-        setList(list.filter((c, index) => index !== position));
-    };
+    const onBtnDelete = (e) => setList(list.filter(c => !c.isChecked));
 
     const onBtnEdit = (e) => {
-        setName(list[position]); 
+        if (list.filter(c => c.isChecked).length !== 1) {
+            alert("Please select only 1 Option");
+            return;
+        }
+
+        const obj = list.find(c => c.isChecked);
+
+        setName(obj.name); 
         setFlag(true);
     };
+    
     const onBtnUpdate = (e) => {
+        const position = list.findIndex(c => c.isChecked);
+     
         const newList = [...list];
-        newList[position] = name;
+        newList[position].name = name;
 
         setList(newList); 
         setName("");
@@ -55,10 +73,10 @@ const AddingElements = () => {
 
     return (
         <div>
-            <h2>List Add</h2>
+            <h2>Checkbox Operation Elements</h2>
                 <div className="input-box-elements">
                     <input value={name} onChange={onNameChange}/>
-                    
+
                     {
                         flag ? (
                             <React.Fragment>
@@ -79,15 +97,15 @@ const AddingElements = () => {
                             list.map((item, index) => (
                                 //For Radio Button after input text display//
                                 <label key={index}>
-                                    <input 
-                                        name="radio" 
-                                        type="radio" 
-                                        value={index} 
-                                        disabled={flag} 
-                                        checked={position === index ? "checked" : ''} 
-                                        onChange={onRadioChange} 
+                                    <input
+                                        type="checkbox"
+                                        name="checkbox" 
+                                        value={index}
+                                        disabled={flag}
+                                        checked={item.isChecked}
+                                        onChange={onCheckboxChange(index)}
                                     />
-                                    {item}
+                                    {item.name}
                                 </label>
                             ))
                         }
@@ -97,4 +115,4 @@ const AddingElements = () => {
     );
 };
 
-export default AddingElements;
+export default AddingCheckboxElements;

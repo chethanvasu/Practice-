@@ -1,0 +1,38 @@
+.buttons {
+    display: grid;
+    grid-template-columns: 2fr 2fr 2fr;
+    border: none;
+    color: white;
+    padding: 15px 15px 15px 15px;
+    font-size: 16px;
+    column-gap: 20px;
+    row-gap: 15px;
+    cursor: pointer;
+}
+
+.result-box {
+    border: 2px solid grey;
+    padding: 50px;
+    width: 50%;
+}
+.container {
+    display: flex;
+    flex-direction: column;
+    border: 2px solid black;
+    background-color:  	#8FD8D8;
+}
+
+.inside-container {
+    display: grid;
+    grid-template-columns: 6fr 6fr;
+}
+.button-alignment {
+    margin-bottom: 10px;    
+    display: grid;
+    grid-template-columns: 3fr 3fr;
+}
+
+.button-alignment-clear {
+   justify-content: center;
+   align-items: center;
+}
